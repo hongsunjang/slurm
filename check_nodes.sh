@@ -27,7 +27,7 @@ while read -r line; do
 done < /tmp/slurm_gpu_tmp.txt
 
 # 출력
-echo "===== GPU 사용량 (SLURM 기준) ====="
+echo "===== GPU 점유중인 노드 (SLURM 기준) ====="
 for node in $(printf "%s\n" "${!gpu_count[@]}" | sort -V); do
     echo "$node: ${gpu_count[$node]} GPU(s)"
 done
